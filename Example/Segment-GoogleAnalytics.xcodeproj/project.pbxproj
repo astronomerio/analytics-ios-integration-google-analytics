@@ -518,6 +518,10 @@
 				GCC_PREFIX_HEADER = "Segment-GoogleAnalytics/Segment-GoogleAnalytics-Prefix.pch";
 				INFOPLIST_FILE = "Segment-GoogleAnalytics/Segment-GoogleAnalytics-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -534,6 +538,10 @@
 				GCC_PREFIX_HEADER = "Segment-GoogleAnalytics/Segment-GoogleAnalytics-Prefix.pch";
 				INFOPLIST_FILE = "Segment-GoogleAnalytics/Segment-GoogleAnalytics-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

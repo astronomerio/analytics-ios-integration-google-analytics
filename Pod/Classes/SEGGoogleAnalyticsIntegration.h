@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
-#import <Analytics/SEGIntegration.h>
-#import <GoogleAnalytics/GAI.h>
+#import <AstronomerAnalytics/SEGIntegration.h>
+#import "GAI.h"
 
 
 @interface SEGGoogleAnalyticsIntegration : NSObject <SEGIntegration>

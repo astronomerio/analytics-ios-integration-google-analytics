@@ -20,17 +20,9 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
+  s.vendored_libraries = 'Pod/Classes/libGoogleAnalyticsServices.a'
+  s.frameworks = 'CoreData', 'SystemConfiguration'
+  s.libraries = 'sqlite3', 'z'
 
   s.dependency 'AstronomerAnalytics', '~> 3.0'
-  s.dependency 'GoogleAnalytics', '~> 3.14'
-
-  s.subspec 'GoogleIDFASupport' do |idfa|
-    # This will get bundled unless a subspec is specified
-    idfa.dependency 'GoogleIDFASupport', '~> 3.14'
-  end
-
-  s.subspec 'Core' do |core|
-    # For users who don't want to bundle GoogleIDFASupport
-    # If a user specified Segment-GoogleAnalytics/Core, we won't bundle IDFA
-  end
 end

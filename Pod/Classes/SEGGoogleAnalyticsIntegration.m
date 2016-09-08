@@ -1,7 +1,7 @@
 #import <GoogleAnalytics/GAIDictionaryBuilder.h>
 #import <GoogleAnalytics/GAIFields.h>
-#import <Analytics/SEGAnalyticsUtils.h>
-#import <Analytics/SEGAnalytics.h>
+#import <AstronomerAnalytics/SEGAnalyticsUtils.h>
+#import <AstronomerAnalytics/SEGAnalytics.h>
 #import "SEGGoogleAnalyticsIntegration.h"
 
 
