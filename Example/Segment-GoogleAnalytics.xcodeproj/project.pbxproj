@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02D2F0841D81CF550070FA39 /* Astronomer-GoogleAnalytics.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 02D2F0831D81CF550070FA39 /* Astronomer-GoogleAnalytics.podspec */; };
 		57AEB84F303148BFBF22F6E0 /* libPods-Segment-GoogleAnalytics_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B1EB12FD425CB6B29525179 /* libPods-Segment-GoogleAnalytics_Example.a */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02D2F0831D81CF550070FA39 /* Astronomer-GoogleAnalytics.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Astronomer-GoogleAnalytics.podspec"; sourceTree = "<group>"; };
 		3C7D54F3981338DCF72E8DC6 /* Pods-Segment-GoogleAnalytics_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Segment-GoogleAnalytics_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Segment-GoogleAnalytics_Example/Pods-Segment-GoogleAnalytics_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		4B1EB12FD425CB6B29525179 /* libPods-Segment-GoogleAnalytics_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Segment-GoogleAnalytics_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5432567472E80719DC676AB7 /* Pods-Segment-GoogleAnalytics_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Segment-GoogleAnalytics_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Segment-GoogleAnalytics_Tests/Pods-Segment-GoogleAnalytics_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -59,7 +61,6 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		61D7F4F112C707EC84C56AE2 /* Pods-Segment-GoogleAnalytics_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Segment-GoogleAnalytics_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Segment-GoogleAnalytics_Tests/Pods-Segment-GoogleAnalytics_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		69F6E0C92C20823DECAFC8C1 /* Segment-GoogleAnalytics.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = "Segment-GoogleAnalytics.podspec"; path = "../Segment-GoogleAnalytics.podspec"; sourceTree = "<group>"; };
 		7A4CAF4607AED5EA7731BDD3 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		93C911FE4B641761C273BD55 /* libPods-Segment-GoogleAnalytics_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Segment-GoogleAnalytics_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -175,7 +176,7 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				69F6E0C92C20823DECAFC8C1 /* Segment-GoogleAnalytics.podspec */,
+				02D2F0831D81CF550070FA39 /* Astronomer-GoogleAnalytics.podspec */,
 				7A4CAF4607AED5EA7731BDD3 /* README.md */,
 				A0C2C92A6F278340F1799027 /* LICENSE */,
 			);
@@ -278,6 +279,7 @@
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				02D2F0841D81CF550070FA39 /* Astronomer-GoogleAnalytics.podspec in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
