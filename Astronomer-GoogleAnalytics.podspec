@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Astronomer-GoogleAnalytics"
-  s.version          = "1.1.3"
+  s.version          = "1.1.4"
   s.summary          = "Google Analytics Integration for Astronomer's analytics-ios library. Adapted from Segment."
 
   s.description      = <<-DESC
