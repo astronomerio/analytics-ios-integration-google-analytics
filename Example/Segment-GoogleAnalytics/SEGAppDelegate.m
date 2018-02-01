@@ -7,13 +7,23 @@
 //
 
 #import "SEGAppDelegate.h"
-
+#import <Analytics/SEGAnalytics.h>
+// Used together with `use_frameworks!`
+//#import "SEGGoogleAnalyticsIntegrationFactory.h"
+// Used without `use_frameworks!`
+#import <Segment-GoogleAnalytics/SEGGoogleAnalyticsIntegrationFactory.h>
 
 @implementation SEGAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    // https://segment.com/ladanazita/sources/ios_test/settings/keys
+    SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:@"ACIG3kwqCUsWZBfYxZDu0anuGwP3XtWW"];
+    [config use:[SEGGoogleAnalyticsIntegrationFactory instance]];
+    [SEGAnalytics setupWithConfiguration:config];
+    [[SEGAnalytics sharedAnalytics] track:@"Test Google Analytics"];
+    [[SEGAnalytics sharedAnalytics] flush];
+    [SEGAnalytics debug:YES];
     return YES;
 }
 

@@ -1,24 +1,26 @@
 PODS:
-  - Analytics (3.2.2)
+  - Analytics (3.5.2)
   - Expecta (1.0.5)
-  - GoogleAnalytics (3.14.0)
+  - GoogleAnalytics (3.17.0)
   - GoogleIDFASupport (3.14.0)
-  - Segment-GoogleAnalytics (1.1.1):
+  - OCHamcrest (6.0.0)
+  - OCMockito (4.0.1):
+    - OCHamcrest (~> 6.0)
+  - Segment-GoogleAnalytics (1.1.7):
+    - Analytics (~> 3.0)
+    - Segment-GoogleAnalytics/GoogleIDFASupport (= 1.1.7)
+  - Segment-GoogleAnalytics/Core (1.1.7):
     - Analytics (~> 3.0)
     - GoogleAnalytics (~> 3.14)
-    - Segment-GoogleAnalytics/Core (= 1.1.1)
-    - Segment-GoogleAnalytics/GoogleIDFASupport (= 1.1.1)
-  - Segment-GoogleAnalytics/Core (1.1.1):
+  - Segment-GoogleAnalytics/GoogleIDFASupport (1.1.7):
     - Analytics (~> 3.0)
-    - GoogleAnalytics (~> 3.14)
-  - Segment-GoogleAnalytics/GoogleIDFASupport (1.1.1):
-    - Analytics (~> 3.0)
-    - GoogleAnalytics (~> 3.14)
     - GoogleIDFASupport (~> 3.14)
+    - Segment-GoogleAnalytics/Core
   - Specta (1.0.5)
 
 DEPENDENCIES:
   - Expecta
+  - OCMockito
   - Segment-GoogleAnalytics (from `../`)
   - Specta
 
@@ -27,11 +29,15 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Analytics: d7a22ef3048638755e74337f4c31eba35be680d3
+  Analytics: 0bf6c9302dcde2bdd9fc410ef2685ad8a1c804dd
   Expecta: e1c022fcd33910b6be89c291d2775b3fe27a89fe
-  GoogleAnalytics: 9be1afdb8deeac4bb5f13ca7f7d3b9db2a1f43dc
+  GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
   GoogleIDFASupport: aaf8c10bd429abb1c15349d5252244f5eda8ead1
-  Segment-GoogleAnalytics: 76450c4edc10ec7cb4dbe11d4682248c15efd012
+  OCHamcrest: fc8ab38149b97df8db8029a3f2157c951bf9081d
+  OCMockito: 62ddc6afff6a883f2864d51224b1dfdc0e9a7df7
+  Segment-GoogleAnalytics: e6b0708facfd5a6931449e9592feae7f335e8d4e
   Specta: ac94d110b865115fe60ff2c6d7281053c6f8e8a2
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 6d601ae2b7ba92842b9a1f64636733b2cef01e31
+
+COCOAPODS: 1.3.1

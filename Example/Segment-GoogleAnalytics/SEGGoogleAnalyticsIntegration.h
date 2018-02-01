@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import <AstronomerAnalytics/SEGIntegration.h>
+#import <Analytics/SEGIntegration.h>
 
 
 @interface SEGGoogleAnalyticsIntegration : NSObject <SEGIntegration>

@@ -1,10 +1,9 @@
-#import "GAIDictionaryBuilder.h"
-#import "GAIFields.h"
-#import <AstronomerAnalytics/SEGAnalyticsUtils.h>
-#import <AstronomerAnalytics/SEGAnalytics.h>
+#import <GoogleAnalytics/GAIDictionaryBuilder.h>
+#import <GoogleAnalytics/GAIFields.h>
+#import <Analytics/SEGAnalyticsUtils.h>
+#import <Analytics/SEGAnalytics.h>
 #import "SEGGoogleAnalyticsIntegration.h"
 #import <GoogleAnalytics/GAI.h>
-
 
 @interface SEGGoogleAnalyticsIntegration ()
 
@@ -87,11 +86,11 @@
 
 - (void)track:(SEGTrackPayload *)payload
 {
-    if ([payload.event isEqualToString:@"Order Completed"]) {
+    if ([payload.event isEqualToString: @"Order Completed"]) {
         [self orderCompleted:payload.properties];
         return;
     }
-
+    
     // Try to extract a "category" property.
     NSString *category = @"All"; // default
     NSString *categoryProperty = [payload.properties objectForKey:@"category"];
@@ -115,7 +114,7 @@
                                                action:payload.event
                                                 label:label
                                                 value:value];
-    NSDictionary *hit = [self setCustomDimensionsAndMetricsAndCampaignData:payload.properties context:payload.context onHit:hitBuilder];
+    NSDictionary *hit = [self setCustomDimensionsAndMetrics:payload.properties onHit:hitBuilder];
     [self.tracker send:hit];
     SEGLog(@"[[[GAI sharedInstance] defaultTracker] send:%@];", hit);
 }
@@ -126,9 +125,7 @@
     SEGLog(@"[[[GAI sharedInstance] defaultTracker] set:%@ value:%@];", kGAIScreenName, payload.name);
 
     GAIDictionaryBuilder *hitBuilder = [GAIDictionaryBuilder createScreenView];
-
-    NSDictionary *hit = [self setCustomDimensionsAndMetricsAndCampaignData:payload.properties context:payload.context onHit:hitBuilder];
-
+    NSDictionary *hit = [self setCustomDimensionsAndMetrics:payload.properties onHit:hitBuilder];
     [self.tracker send:hit];
     SEGLog(@"[[[GAI sharedInstance] defaultTracker] send:%@];", hit);
 }
@@ -178,7 +175,7 @@
 
 // event and screen properties are generall hit-scoped dimensions, so we want
 // to set them on the hits, not the tracker
-- (NSDictionary *)setCustomDimensionsAndMetricsAndCampaignData:(NSDictionary *)properties context:(NSDictionary *)context onHit:(GAIDictionaryBuilder *)hit
+- (NSDictionary *)setCustomDimensionsAndMetrics:(NSDictionary *)properties onHit:(GAIDictionaryBuilder *)hit
 {
     NSDictionary *customDimensions = self.settings[@"dimensions"];
     NSDictionary *customMetrics = self.settings[@"metrics"];
@@ -199,33 +196,8 @@
         }
     }
 
-    NSDictionary *campaign = context[@"campaign"];
-    if ([campaign isKindOfClass:[NSDictionary class]]) {
-        if ([campaign[@"source"] isKindOfClass:[NSString class]]) {
-            [hit set:campaign[@"source"] forKey:kGAICampaignSource];
-            if ([campaign[@"name"] isKindOfClass:[NSString class]]) {
-                [hit set:campaign[@"name"] forKey:kGAICampaignName];
-            }
-            if ([campaign[@"content"] isKindOfClass:[NSString class]]) {
-                [hit set:campaign[@"content"] forKey:kGAICampaignContent];
-            }
-            if ([campaign[@"medium"] isKindOfClass:[NSString class]]) {
-                [hit set:campaign[@"medium"] forKey:kGAICampaignMedium];
-            }
-        } else {
-            // https://developers.google.com/analytics/devguides/collection/ios/v3/campaigns
-            SEGLog(@"WARNING: campaign source is a required field for GA. Omitting campaign attributes");
-        }
-        // Segment does not currently spec the following keys that GA accepts
-        // kGAICampaignKeyword
-        // kGAICampaignId
-        // kGAICampaignAdNetworkClickId
-        // kGAICampaignAdNetworkId
-    }
-
     return [hit build];
 }
-
 
 // e.g. extractNumber:"dimension3" from:[@"dimension" length] returns 3
 // e.g. extractNumber:"metric9" from:[@"metric" length] returns 9
