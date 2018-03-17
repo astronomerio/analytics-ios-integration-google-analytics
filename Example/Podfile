@@ -2,7 +2,7 @@
 
 target 'Segment-GoogleAnalytics_Example' do
   # Use default subspec
-  pod 'Segment-GoogleAnalytics', :path => '../'
+  pod 'Astronomer-GoogleAnalytics', :path => '../'
   # Use default `GoogleIDFASupport` explicitly
   # pod 'Segment-GoogleAnalytics/GoogleIDFASupport', :path => '../'
   # Use only `Segment-GoogleAnalytics/Core`

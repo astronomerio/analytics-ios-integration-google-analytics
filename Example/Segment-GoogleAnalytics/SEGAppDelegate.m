@@ -7,18 +7,18 @@
 //
 
 #import "SEGAppDelegate.h"
-#import <Analytics/SEGAnalytics.h>
+#import <AstronomerAnalytics/SEGAnalytics.h>
 // Used together with `use_frameworks!`
 //#import "SEGGoogleAnalyticsIntegrationFactory.h"
 // Used without `use_frameworks!`
-#import <Segment-GoogleAnalytics/SEGGoogleAnalyticsIntegrationFactory.h>
+#import <Astronomer-GoogleAnalytics/SEGGoogleAnalyticsIntegrationFactory.h>
 
 @implementation SEGAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // https://segment.com/ladanazita/sources/ios_test/settings/keys
-    SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:@"ACIG3kwqCUsWZBfYxZDu0anuGwP3XtWW"];
+    SEGAnalyticsConfiguration *config = [SEGAnalyticsConfiguration configurationWithWriteKey:@"DZQ94gh8ZbHg2mtnn7cbj"];
     [config use:[SEGGoogleAnalyticsIntegrationFactory instance]];
     [SEGAnalytics setupWithConfiguration:config];
     [[SEGAnalytics sharedAnalytics] track:@"Test Google Analytics"];
